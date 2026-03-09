@@ -1,32 +1,11 @@
 {
-  "$schema": "https://saleae.github.io/logic2-sdk/manifest/v1/analyzer-manifest.schema.json",
-  "analyzer_type": "high_level",
-  "id": "xingheng-bms-single-wire",
-  "version": "1.3.3",
-  "name": "星恒BMS一线通协议",
-  "author": "Developer",
-  "description": "星恒智能BMS一线通协议解析插件，支持协议版本A1.3.3，解析公有报文/单串电压报文/电池唯一码报文，含校验、物理值换算、故障码解析",
-  "requirements": {
-    "logic2_version": ">=2.3.0",
-    "python_version": ">=3.7"
-  },
-  "entry_point": "xingheng_bms_single_wire:XingHengBmsSingleWire",
-  "input_channels": {
-    "minimum": 1,
-    "maximum": 1
-  },
-  "default_input_channels": 1,
-  "settings": [
+  "apiVersion": "1.0.0",
+  "extensions": [
     {
-      "name": "channel",
-      "type": "number",
-      "label": "一线通信号通道",
-      "default": 0,
-      "min": 0,
-      "max": 15,
-      "step": 1
+      "name": "xingheng_bms_single_wire",
+      "version": "1.0.0",
+      "type": "python_analyzer",
+      "entry_point": "xingheng_bms_single_wire.analyzer"
     }
-  ],
-  "supports_streaming": false,
-  "tags": ["BMS", "锂电池", "一线通", "星恒", "电动车"]
+  ]
 }
